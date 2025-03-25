@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000
 app.use(express.json());  // allows us to accept JSON in the body req.body
-ape.use("/api/products".productRoutes);
+app.use("/api/products", productRoutes);
 
 /*
 app.get("/api/products", async (req, res) =>{
