@@ -1,14 +1,19 @@
 import express from "express";//import express, { json } from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
+import productRoutes from "./routes/product.route.js"
+/*
 import Product from "./models/product-model.js";
 import mongoose from "mongoose";
+*/
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000
 app.use(express.json());  // allows us to accept JSON in the body req.body
+ape.use("/api/products".productRoutes);
 
+/*
 app.get("/api/products", async (req, res) =>{
   try{
     const products = await Product.find({});
@@ -62,7 +67,7 @@ console.log("error in deleting product:",error.Message);
 res.status(404).json({success:false,Message:"Product not found"});
 }
 });
-
+*/
 
 app.listen(PORT, () => {
   connectDB();
